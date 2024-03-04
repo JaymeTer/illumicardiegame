@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "illumicardie", "illumicardie\illumicardie.csproj", "{B915FE1C-0D3F-4A74-A7B4-8434CF91C9AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B915FE1C-0D3F-4A74-A7B4-8434CF91C9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B915FE1C-0D3F-4A74-A7B4-8434CF91C9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B915FE1C-0D3F-4A74-A7B4-8434CF91C9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B915FE1C-0D3F-4A74-A7B4-8434CF91C9AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {721E3FD0-BC40-4B08-B375-631512BBE5B5}
+	EndGlobalSection
+EndGlobal
