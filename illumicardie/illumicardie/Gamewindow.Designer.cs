@@ -38,8 +38,9 @@
             this.Playerhand6 = new System.Windows.Forms.PictureBox();
             this.Dealbutton = new System.Windows.Forms.Button();
             this.Playertotal = new System.Windows.Forms.Label();
-            this.Hitbutton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Hitbutton = new System.Windows.Forms.Button();
+            this.btnPlStay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Deck)).BeginInit();
@@ -115,12 +116,13 @@
             this.Dealbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Dealbutton.BackgroundImage")));
             this.Dealbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Dealbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Dealbutton.Location = new System.Drawing.Point(432, 320);
+            this.Dealbutton.Location = new System.Drawing.Point(441, 570);
             this.Dealbutton.Name = "Dealbutton";
-            this.Dealbutton.Size = new System.Drawing.Size(84, 48);
+            this.Dealbutton.Size = new System.Drawing.Size(132, 49);
             this.Dealbutton.TabIndex = 7;
             this.Dealbutton.Text = "Deal";
             this.Dealbutton.UseVisualStyleBackColor = true;
+            this.Dealbutton.Click += new System.EventHandler(this.Dealbutton_Click_1);
             // 
             // Playertotal
             // 
@@ -132,12 +134,30 @@
             // 
             // Hitbutton
             // 
-            this.Hitbutton.Location = new System.Drawing.Point(253, 488);
+            this.Hitbutton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Hitbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Hitbutton.BackgroundImage")));
+            this.Hitbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Hitbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Hitbutton.Location = new System.Drawing.Point(441, 515);
             this.Hitbutton.Name = "Hitbutton";
-            this.Hitbutton.Size = new System.Drawing.Size(75, 23);
+            this.Hitbutton.Size = new System.Drawing.Size(132, 49);
             this.Hitbutton.TabIndex = 9;
             this.Hitbutton.Text = "Hit";
             this.Hitbutton.UseVisualStyleBackColor = true;
+            // 
+            // btnPlStay
+            // 
+            this.btnPlStay.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnPlStay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPlStay.BackgroundImage")));
+            this.btnPlStay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPlStay.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnPlStay.Location = new System.Drawing.Point(441, 460);
+            this.btnPlStay.Name = "btnPlStay";
+            this.btnPlStay.Size = new System.Drawing.Size(132, 49);
+            this.btnPlStay.TabIndex = 10;
+            this.btnPlStay.Text = "Stay";
+            this.btnPlStay.UseVisualStyleBackColor = true;
+            this.btnPlStay.Click += new System.EventHandler(this.btnPlStay_Click);
             // 
             // Gamewindow
             // 
@@ -146,6 +166,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(585, 842);
+            this.Controls.Add(this.btnPlStay);
             this.Controls.Add(this.Hitbutton);
             this.Controls.Add(this.Playertotal);
             this.Controls.Add(this.Dealbutton);
@@ -156,6 +177,7 @@
             this.Controls.Add(this.Deck);
             this.Controls.Add(this.Playerhand2);
             this.Controls.Add(this.Playerhand1);
+            this.DoubleBuffered = true;
             this.Name = "Gamewindow";
             this.Text = "Illumicardie Table";
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand1)).EndInit();
@@ -181,8 +203,9 @@
         private System.Windows.Forms.PictureBox Playerhand6;
         private System.Windows.Forms.Button Dealbutton;
         private System.Windows.Forms.Label Playertotal;
-        private System.Windows.Forms.Button Hitbutton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button Hitbutton;
+        private System.Windows.Forms.Button btnPlStay;
     }
 }
 

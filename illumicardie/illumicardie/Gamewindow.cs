@@ -37,6 +37,7 @@ namespace illumicardie
 
         // This is the total listed under the cards
         private int playerTotal = 0;
+        private int dealerTotal = 0;
 
         public Gamewindow()
         {
@@ -282,6 +283,78 @@ namespace illumicardie
             WaveOutEvent screamPlayer = new WaveOutEvent();
             screamPlayer.Init(new AudioFileReader(AppDomain.CurrentDomain.BaseDirectory + @"Sound\Scream.mp3"));
             screamPlayer.Play();
+        }
+
+        private void Dealbutton_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPlStay_Click(object sender, EventArgs e)
+        {
+            Hitbutton.Enabled = false;
+            btnPlStay.Enabled = false;
+
+            ProceedWithDealerTurn();
+        }
+        private void ProceedWithDealerTurn()
+        {
+            // Example logic for the dealer's turn
+            while (dealerTotal < 17)
+            {
+                string card = DealCard();
+                if (card == null) break; // Check if the deck is empty
+
+                UpdateDealerTotal(card);
+                // Optionally, simulate delay for drawing cards or show cards on UI (not covered here)
+            }
+
+            // Compare the totals and decide the outcome
+            ComparePlayerAndDealerTotals();
+        }
+
+        private void UpdateDealerTotal(string card)
+        {
+            int value;
+            if (int.TryParse(card.Split('_')[0], out value))
+            {
+                dealerTotal += value;
+            }
+            else
+            {
+                if (card.StartsWith("ace"))
+                {
+                    // Handle ace as 11 or 1 to avoid busting, if applicable
+                    dealerTotal += (dealerTotal + 11 <= 21) ? 11 : 1;
+                }
+                else
+                {
+                    dealerTotal += 10;
+                }
+            }
+        }
+
+        private void ComparePlayerAndDealerTotals()
+        {
+            if (playerTotal > 21)
+            {
+                MessageBox.Show("Bust! You lose.");
+            }
+            else if (dealerTotal > 21 || playerTotal > dealerTotal)
+            {
+                MessageBox.Show("You win!");
+            }
+            else if (playerTotal == dealerTotal)
+            {
+                MessageBox.Show("It's a draw!");
+            }
+            else
+            {
+                MessageBox.Show("Dealer wins.");
+            }
+
+            // Reset the game for a new round
+            ResetGame();
         }
     }
 }
