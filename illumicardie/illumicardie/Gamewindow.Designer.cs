@@ -41,6 +41,8 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Hitbutton = new System.Windows.Forms.Button();
             this.btnPlStay = new System.Windows.Forms.Button();
+            this.DealerHand1 = new System.Windows.Forms.PictureBox();
+            this.DealerHand2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Deck)).BeginInit();
@@ -48,6 +50,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DealerHand1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DealerHand2)).BeginInit();
             this.SuspendLayout();
             // 
             // Playerhand1
@@ -159,6 +163,26 @@
             this.btnPlStay.UseVisualStyleBackColor = true;
             this.btnPlStay.Click += new System.EventHandler(this.btnPlStay_Click);
             // 
+            // DealerHand1
+            // 
+            this.DealerHand1.Location = new System.Drawing.Point(231, 128);
+            this.DealerHand1.Name = "DealerHand1";
+            this.DealerHand1.Size = new System.Drawing.Size(65, 86);
+            this.DealerHand1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DealerHand1.TabIndex = 11;
+            this.DealerHand1.TabStop = false;
+            this.DealerHand1.Click += new System.EventHandler(this.DealerHand1_Click);
+            // 
+            // DealerHand2
+            // 
+            this.DealerHand2.Location = new System.Drawing.Point(272, 128);
+            this.DealerHand2.Name = "DealerHand2";
+            this.DealerHand2.Size = new System.Drawing.Size(65, 86);
+            this.DealerHand2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DealerHand2.TabIndex = 12;
+            this.DealerHand2.TabStop = false;
+            this.DealerHand2.Click += new System.EventHandler(this.DealerHand2_Click);
+            // 
             // Gamewindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +190,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(585, 842);
+            this.Controls.Add(this.DealerHand2);
+            this.Controls.Add(this.DealerHand1);
             this.Controls.Add(this.btnPlStay);
             this.Controls.Add(this.Hitbutton);
             this.Controls.Add(this.Playertotal);
@@ -187,6 +213,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DealerHand1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DealerHand2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +234,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button Hitbutton;
         private System.Windows.Forms.Button btnPlStay;
+        private System.Windows.Forms.PictureBox DealerHand1;
+        private System.Windows.Forms.PictureBox DealerHand2;
     }
 }
 

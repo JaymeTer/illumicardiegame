@@ -249,6 +249,10 @@ namespace illumicardie
             Playerhand5.Visible = false;
             Playerhand6.Image = null;
             Playerhand6.Visible = false;
+            DealerHand1.Image = null;
+            DealerHand1.Visible = false;
+            DealerHand2.Image = null;
+            DealerHand2.Visible = false; 
 
             // Reset player total
             playerTotal = 0;
@@ -302,11 +306,23 @@ namespace illumicardie
             // Example logic for the dealer's turn
             while (dealerTotal < 17)
             {
-                string card = DealCard();
-                if (card == null) break; // Check if the deck is empty
+                string dealerCard1 = DealCard();
+                if (dealerCard1 != null)
+                {
+                    LoadCardImage(DealerHand1, dealerCard1);
+                    UpdateDealerTotal(dealerCard1);
+                    DealerHand1.Visible = true; // Make the first card visible
+                }
 
-                UpdateDealerTotal(card);
-                // Optionally, simulate delay for drawing cards or show cards on UI (not covered here)
+                string dealerCard2 = DealCard(); // You may want to store this card's value if you're initially hiding it
+                if (dealerCard2 != null)
+                {
+                    // If you're showing the second card immediately:
+                    LoadCardImage(DealerHand2, dealerCard2);
+                    UpdateDealerTotal(dealerCard2);
+                    DealerHand2.Visible = true; // Make the second card visible
+                                                // If you're hiding the second card until the player's turn is over, don't make it visible yet
+                }
             }
 
             // Compare the totals and decide the outcome
@@ -355,6 +371,16 @@ namespace illumicardie
 
             // Reset the game for a new round
             ResetGame();
+        }
+
+        private void DealerHand1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DealerHand2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
