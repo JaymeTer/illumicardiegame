@@ -72,7 +72,7 @@
             // 
             this.Deck.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Deck.BackgroundImage")));
             this.Deck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Deck.Location = new System.Drawing.Point(76, 300);
+            this.Deck.Location = new System.Drawing.Point(57, 238);
             this.Deck.Name = "Deck";
             this.Deck.Size = new System.Drawing.Size(65, 86);
             this.Deck.TabIndex = 2;
