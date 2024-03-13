@@ -382,5 +382,15 @@ namespace illumicardie
         {
 
         }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void Playerhand2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
