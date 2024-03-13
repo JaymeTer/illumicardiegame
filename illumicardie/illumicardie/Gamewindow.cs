@@ -77,21 +77,35 @@ namespace illumicardie
 
             // links the method to the clicky
             Hitbutton.Click += Hitbutton_Click;
+
+            btnPlStay.Enabled = false;
+            // enable the hit and stay buttons
+            Hitbutton.Enabled = true;
+            btnPlStay.Enabled = true;
         }
 
         // Method to load the cardsr
         private void LoadCardImage(PictureBox pictureBox, string card)
         {
-            // Construct the file path for the card image
-            string imagePath = @"Images\" + card + ".png";
-
-            // Load the card image into the specified picture box
-            pictureBox.Image = Image.FromFile(imagePath);
-
-            // Make the picture box visible
-            pictureBox.Visible = true;
+            if (card == null)
+            {
+                pictureBox.Visible = false; // Hide PictureBox if no card is specified
+            }
+            else
+            {
+                string imagePath = @"Images\" + card + ".png";
+                try
+                {
+                    pictureBox.Image = Image.FromFile(imagePath);
+                    pictureBox.Visible = true; // Only make PictureBox visible if image loads successfully
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Failed to load image at {imagePath}: {ex.Message}");
+                    pictureBox.Visible = false; // Ensure PictureBox is hidden if image load fails
+                }
+            }
         }
-
         // Method to deal the cards
         private string DealCard()
         {
@@ -179,6 +193,9 @@ namespace illumicardie
 
             // Enable the Hit button after the deal
             Hitbutton.Enabled = true;
+
+            // Enable the Stay button after deal
+            btnPlStay.Enabled = true;
         }
 
         // Hitbutton click 
@@ -236,37 +253,47 @@ namespace illumicardie
         // Method to reset the game
         private void ResetGame()
         {
-            // Clear all picture boxes and set them back to invisible
+            // Clear and hide player's hand
             Playerhand1.Image = null;
             Playerhand1.Visible = false;
             Playerhand2.Image = null;
             Playerhand2.Visible = false;
             Playerhand3.Image = null;
             Playerhand3.Visible = false;
-            Playerhand4.Image = null;
-            Playerhand4.Visible = false;
-            Playerhand5.Image = null;
+            Playerhand4.Image = null;   
+            Playerhand4.Visible = false;    
+            Playerhand5.Image = null;   
             Playerhand5.Visible = false;
-            Playerhand6.Image = null;
-            Playerhand6.Visible = false;
+
+            // Continue for all player hands...
+
+            // Clear and hide dealer's hand
             DealerHand1.Image = null;
             DealerHand1.Visible = false;
             DealerHand2.Image = null;
-            DealerHand2.Visible = false; 
+            DealerHand2.Visible = false;
+            DealerHand3.Image = null;
+            DealerHand3.Visible = false;
+            DealerHand4.Image = null;
+            DealerHand4.Visible = false;
+            DealerHand5.Image = null;
+            DealerHand5.Visible = false;
+            // Add lines for any additional dealer hands
 
-            // Reset player total
+            // Reset totals
             playerTotal = 0;
+            dealerTotal = 0;
 
-            // Update Playertotal label
-            Playertotal.Text = "Player Total: " + playerTotal.ToString();
+            // Update total labels if you have them
+            Playertotal.Text = "Player Total: 0";
+            // Add a dealer total label update if you have one
 
-            // Enable the Deal button
+            // Reset deck and other game states if necessary
+
+            // Enable/Disable buttons as needed
             Dealbutton.Enabled = true;
-
-            // Disable the Hit button
             Hitbutton.Enabled = false;
-            
-
+            btnPlStay.Enabled = false;
         }
         private void PlayCrowdLoseSound()
         {
@@ -323,6 +350,36 @@ namespace illumicardie
                     DealerHand2.Visible = true; // Make the second card visible
                                                 // If you're hiding the second card until the player's turn is over, don't make it visible yet
                 }
+                if (!DealerHand3.Visible)
+                {
+                    string card = DealCard();
+                    if (card != null)
+                    {
+                        LoadCardImage(DealerHand3, card);
+                        UpdateDealerTotal(card);
+                        DealerHand3.Visible = true;
+                    }
+                }
+                if (!DealerHand4.Visible)
+                {
+                    string card = DealCard();
+                    if (card != null)
+                    {
+                        LoadCardImage(DealerHand4, card);
+                        UpdateDealerTotal(card);
+                        DealerHand3.Visible = true;
+                    }
+                }
+                if (!DealerHand3.Visible)
+                {
+                    string card = DealCard();
+                    if (card != null)
+                    {
+                        LoadCardImage(DealerHand3, card);
+                        UpdateDealerTotal(card);
+                        DealerHand3.Visible = true;
+                    }
+                }
             }
 
             // Compare the totals and decide the outcome
@@ -346,6 +403,7 @@ namespace illumicardie
                 else
                 {
                     dealerTotal += 10;
+                    DlrHandTotal.Text = $"Dealer Total: {dealerTotal}";
                 }
             }
         }
@@ -391,6 +449,26 @@ namespace illumicardie
         private void Playerhand2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DealerHand3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DealerHand4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DealerHand5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DlrHandTotal_Click(object sender, EventArgs e)
+        {
+        
         }
     }
 }
