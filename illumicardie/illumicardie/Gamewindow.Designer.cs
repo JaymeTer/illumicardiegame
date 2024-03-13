@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gamewindow));
             this.Playerhand1 = new System.Windows.Forms.PictureBox();
             this.Playerhand2 = new System.Windows.Forms.PictureBox();
-            this.Deck = new System.Windows.Forms.PictureBox();
             this.Playerhand3 = new System.Windows.Forms.PictureBox();
             this.Playerhand4 = new System.Windows.Forms.PictureBox();
             this.Playerhand5 = new System.Windows.Forms.PictureBox();
@@ -43,7 +42,6 @@
             this.btnPlStay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Deck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand5)).BeginInit();
@@ -67,16 +65,6 @@
             this.Playerhand2.Size = new System.Drawing.Size(65, 86);
             this.Playerhand2.TabIndex = 1;
             this.Playerhand2.TabStop = false;
-            // 
-            // Deck
-            // 
-            this.Deck.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Deck.BackgroundImage")));
-            this.Deck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Deck.Location = new System.Drawing.Point(57, 238);
-            this.Deck.Name = "Deck";
-            this.Deck.Size = new System.Drawing.Size(65, 86);
-            this.Deck.TabIndex = 2;
-            this.Deck.TabStop = false;
             // 
             // Playerhand3
             // 
@@ -174,7 +162,6 @@
             this.Controls.Add(this.Playerhand5);
             this.Controls.Add(this.Playerhand4);
             this.Controls.Add(this.Playerhand3);
-            this.Controls.Add(this.Deck);
             this.Controls.Add(this.Playerhand2);
             this.Controls.Add(this.Playerhand1);
             this.DoubleBuffered = true;
@@ -182,7 +169,6 @@
             this.Text = "Illumicardie Table";
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Deck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Playerhand5)).EndInit();
@@ -196,7 +182,6 @@
 
         private System.Windows.Forms.PictureBox Playerhand1;
         private System.Windows.Forms.PictureBox Playerhand2;
-        private System.Windows.Forms.PictureBox Deck;
         private System.Windows.Forms.PictureBox Playerhand3;
         private System.Windows.Forms.PictureBox Playerhand4;
         private System.Windows.Forms.PictureBox Playerhand5;
