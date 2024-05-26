@@ -357,7 +357,7 @@ namespace illumicardie
             {
                 MessageBox.Show("Dealer wins.");
             }
-            ResetGame();
+2            ResetGame();
         }
 
         private void DealerHand1_Click(object sender, EventArgs e)
